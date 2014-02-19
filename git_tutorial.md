@@ -36,3 +36,26 @@ tree .git | more
 actual data in info, objects, and refs
 there is one and only one .git folder per repository, at top level of project (unlike CVS, subversion)
 if you want to un-git something, just delete the .git folder
+
+git status
+
+my text file is an untracked file. Git tracks content. See if any files are modified or have not been seen before. Git add file to version control.
+
+Unlike other VCS systems, this just sets up to participate in next change set.
+
+git status
+git commit -m "my first commit"
+master branch, first 7 characters of global unique identifier
+100644 "umask - UNIX": 44 means user can read & write, others can read
+
+git status - clean - nothing in background, examines everything
+no need to refresh, redo database
+
+free book: http://git-scm.com/book, Pro Git by Scott Chacon
+http://teach.github.com
+
+Now, we intentionally left it this long to get the net side going. Could do all this stuff locally.
+
+
+
+
