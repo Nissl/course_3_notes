@@ -89,4 +89,16 @@ git branch novclassfeature
 git checkout novclassfeature
 
 Now directory is on a branch
-Testing something.
+(Testing something.)
+
+Go to website. To offer: pull request
+A pull request is a fundamental unit of work on the Github side of things.
+Why is this called a "pull request" - inverted permissions - changes not folded in until admin decides to. Open window, describe why to add
+Queued up for core project maintainer to act on.
+
+Several pull requests open
+Merge one into project
+
+This ability is very transformative! Don't have to worry about giving access to the project to people. Give the other people the ability to issue pull requests.
+
+Can have a debate on changes - fires a message back to author of pull request.
