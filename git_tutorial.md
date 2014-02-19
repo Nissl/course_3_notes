@@ -56,6 +56,36 @@ http://teach.github.com
 
 Now, we intentionally left it this long to get the net side going. Could do all this stuff locally.
 
+Firefox and Chrome - two different repositories, githubtrainer, githubstudent. Trainer is the project leader, student is the minion/collaborator/open source contributor
 
+githubtrainer runs hellogitworld
 
+First, publish your own project. The local project has no knowledge of any network destination.
 
+Click "create a new repository"
+git remote add origin git@github.com:Nissl/course_3_notes.git
+git push -u origin master
+(type username, password)
+
+git remote adds a "bookmark" at the location
+push is the verb that syncs
+
+git preserves timestamp on local machine
+
+working on, joining, etc. project that already exists
+we don't have privileged access to the repo - do we ask for credentials?
+nope! on many open source projects, start helping, ask for code to be folded in once you get a meaningful contribution. go to repository, fork. get a photocopy to personal account.
+
+As soon as we start making changes, will offer them back to project.
+
+Step back out of the project. 
+
+git clone (repository address) - clones into the folder name
+
+Full-fledged repo - all history and branches on local disk
+Emphasize - local instructions
+
+git branch novclassfeature
+git checkout novclassfeature
+
+Now directory is on a branch
