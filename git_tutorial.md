@@ -102,3 +102,7 @@ Merge one into project
 This ability is very transformative! Don't have to worry about giving access to the project to people. Give the other people the ability to issue pull requests.
 
 Can have a debate on changes - fires a message back to author of pull request.
+Ocean of GUI choices.
+Why show the command line? When you transition to a GUI, very easy because you know what's below the GUI. What is a push doing, or a clone? We know the answer to that now. 
+
+(Look at Windows)
