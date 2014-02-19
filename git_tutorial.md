@@ -87,5 +87,16 @@ Emphasize - local instructions
 
 git branch novclassfeature
 git checkout novclassfeature
+git status
 
 Now directory is on a branch
+create a file 
+appears in a finder view
+
+add, commit files
+git push -u origin testbranch
+
+git checkout master
+
+File disappears from file system
+When you checkout a branch in git, it's updating the file system - all files up to date with branch checked out.
