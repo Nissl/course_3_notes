@@ -89,3 +89,4 @@ git branch novclassfeature
 git checkout novclassfeature
 
 Now directory is on a branch
+Testing something.
