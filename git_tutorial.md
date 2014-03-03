@@ -106,3 +106,10 @@ Ocean of GUI choices.
 Why show the command line? When you transition to a GUI, very easy because you know what's below the GUI. What is a push doing, or a clone? We know the answer to that now. 
 
 (Look at Windows)
+Gitpad
+Eclipse - eclipse.org/egit
+
+Grails - 5x contributions once switched to Git.
+A few more neat features:
+Can do image diff - before and after of graphics, even with difference engine to highlight differences - no tools needed on desktop
+Enterprises can open their own versions of Github internally.
