@@ -120,3 +120,61 @@ deploy to heroku
 HW1
 install Rspec
 write first test for video model - can save video
+
+HW2, 3
+validates_presence_of is also an option
+model, order: is deprecated
+#has_many :videos, order: :title #from examples, now deprecated
+has_many :videos, -> { order "title" }
+# need to learn more about scope blocks
+
+# All 3 work, but last is preferred syntax now
+#Video.first.title.should == "Test_Vid"
+#ideo.first.should eq(video)
+
+categories:
+# different tests:
+expect(Category.first.videos.length).to eq(2)
+expect(comedies.videos).to include(futurama, south_park)
+
+# my solution:
+# expect(Video.first).not_to eq(video)
+
+cutout pre-shoulda matchers:
+
+it "belongs to category" do
+	comedies = Category.create(name: "TV Comedies")
+	video = Video.create(title: "Futurama", category: comedies)
+	expect(video.category).to eq(comedies)
+end
+
+it "has many videos" do
+	comedies = Category.create(name: "TV Comedies")
+	# doing the same thing, multiple ways
+	south_park = Video.create(title: "South Park", description: "super funny!", category: comedies)
+	futurama = Video.create(title: "Futurama", description: "Fry is a cool dude", category: comedies)
+
+	# only with order: :title in place in category model
+	expect(comedies.videos).to eq([futurama, south_park])
+end
+
+  it "requires a title to save" do
+    video = Video.create(description: "video with no title")
+    expect(Video.count).to eq(0)
+  end
+
+  it "requires a description to save" do
+    video = Video.create(title: "video with no description")
+    expect(Video.count).to eq(0)
+  end
+
+# cut, testing Rails, not worth it (ditto category)
+it "saves itself" do
+	video = Video.new(title: "Test_Vid", description: "test_vid_description")
+	video.save
+
+	expect(Video.first).to eq(video)
+end
+
+Use shoulda matchers for testing basic model fatures
+
