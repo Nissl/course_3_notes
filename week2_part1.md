@@ -341,3 +341,73 @@ authentication tests
 users controller
 session controller
 happy and bad paths! :D 
+
+HW3 
+enable reviews
+sort in reverse chronological order
+enable average rating
+make sure to fabricate some reviews in your test
+
+# match against array regardless of order
+=~ 
+or
+match_array
+
+rake db:reset 
+Ask Kevin: talk a little bit about the switch to scope blocks for order
+
+HW4
+let the user submit reviews
+test first
+happy path, invalid path, user not logged in path
+
+
+, url: {action "reviews#create"}, html: {class: "form-control"}
+
+{"utf8"=>"✓",
+ "authenticity_token"=>"sx309jLVLDdIrmeU8HcDSW+JQR4gNfeD4kR399ZviWY=",
+ "review"=>{"rating"=>"5", "review_text"=>"pooooop"},
+ "commit"=>"Submit",
+ "action"=>"create",
+ "controller"=>"reviews",
+ "video_id"=>"1"}
+
+ params.merge!
+ map pluralize
+
+ bad migration? if it was the last one, fix it, do 
+ rake db:rollback db:migrate db:test:prepare
+
+Now:
+Implementing a queue
+My Queue
+Add a video to queue
+Rating carries over to queue
+Remove video with X
+Re order videos by changing numbers around
+Can also rate videos right in the queue
+LATER: Implement video playing (in order)
+
+Part 1
+Build My Queue page
+Show list of entries
+Each item tracks video, current video, position number.
+Focus on title, rating, genre columns first.
+Remove, change rating, reorder implement later. (Phew... how to do rating, with review restrictions? New DB approach?)
+Add video later
+
+Fabricate queue items.
+TDD process
+
+Part 2 
+Enable the add video ability for a user.
+Make sure that the video is added to the bottom of the queue.
+
+note
+unless current_user.queue_items.map(&:video).include?(video)
+
+I preferred to do it at the model level....
+
+Part 3 
+Remove video from queue
+Redirect user back to my_queue
