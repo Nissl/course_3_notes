@@ -204,7 +204,49 @@ yeahhh... several hours later, I watched the solution
  the second one is the actual key.
 
 I used a separate conditional wrapper for extra conditions, but here's how to use a transaction.
-
-ActiveRecord::Base.transaction do
-  #stuff you want to revert if one of them fails. Use a bang to raise exception!
+begin
+	ActiveRecord::Base.transaction do
+	  #stuff you want to revert if one of them fails. Use a bang to raise exception!
+	end
+rescue ActiveRecord::RecordInvalid
+	flash[:danger] = "Invalid position numbers."
+	# etc.
+	return
 end
+
+refactor todos controller
+be very careful about putting business logic in the controller
+better solution: push down to model level
+
+if @todo.save_with_tags
+	redirect_to root_path
+else
+	render :new
+def save_with_tags
+	if save
+		location_string = name.string
+		etc.
+		true
+	else
+		false
+	end
+end
+
+Do you need a new test now? Still covered in controller.
+If a very simple move refactor, not worth changing test.
+However, if implementing new features, consider writing new tests on the model level.
+
+Make private method, create_location_tags 
+
+Skinny controller, fat model - move stuff down to the model if you can!
+Fat controllers in the wild
+redmine, chiliproject
+redmine - look at index, show - very hard to know what's going on
+
+run the whole test suite using "rspec" to make sure you didn't break anything!
+
+HW - set rating
+TDD pattern
+If no review, appear blank
+Note that review validation requires review - need to find out way to bypass validations
+
