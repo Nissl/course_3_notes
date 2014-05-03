@@ -171,3 +171,5 @@ Click link, goes to reset password page
 Changes password, takes them back to sign in page
 Message password reset
 Token should only be valid before user resets password
+
+Note: use update_column to get around user password issues by skipping validations!
