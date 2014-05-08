@@ -351,6 +351,9 @@ heroku fork -a sourceapp targetapp (tl-myflix, tl-myflix-stage)
 git remote add staging git@heroku.com:tl-myflix-stage.git
 git push staging mod8:master
 
+Various ways to copy over database from production to staging from time to time (follower costs $$)
+But staging server sends emails, so be careful! Add line to send email to admins instead, perhaps.
+
 Deployment pipeline
 Many ways to do this. We'll use a simple one.
 
@@ -363,3 +366,14 @@ Setup Sentry via Heroku
 gem 'sentry-raven'
 
 You can now see runtime errors in the Heroku console. Cool beans.
+
+Paratrooper gem
+automate deploy pipeline
+put example usage code in lib/tasks as deploy.rake (w/tweak for Heroku app names)
+you can now run rake deploy:staging and rake deploy:production
+contains match-tag line to staging. cannot skip staging step now.
+note to self: only deploys off of master!
+
+Once your git flow is approved,
+merge it, pull, and
+deploy to staging and production.
