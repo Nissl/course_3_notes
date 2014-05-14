@@ -377,3 +377,10 @@ note to self: only deploys off of master!
 Once your git flow is approved,
 merge it, pull, and
 deploy to staging and production.
+
+Note: turning on admin on heroku:
+To access the server:
+heroku pg:credentials DATABASE --app APP
+
+then in Valentina:
+UPDATE users set admin=true where email='jtmorgan61@gmail.com';
